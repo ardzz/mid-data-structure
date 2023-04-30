@@ -7,8 +7,6 @@ public class List {
     public Node head;
     public Node tail;
     public int size;
-
-    protected AbstractItem item;
     public List() {
         this.head = null;
         this.tail = null;
