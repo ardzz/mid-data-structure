@@ -75,6 +75,42 @@ public class List {
         size++;
     }
 
+    public void deleteByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        current.prev.next = current.next;
+        current.next.prev = current.prev;
+        size--;
+    }
+
+    public void deleteAfterByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        current.next.next.prev = current;
+        current.next = current.next.next;
+        size--;
+    }
+
+    public void deleteBeforeByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        current.prev.prev.next = current;
+        current.prev = current.prev.prev;
+        size--;
+    }
+
     public void print() {
         Node current = head;
         while (current != null) {
