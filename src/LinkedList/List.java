@@ -19,7 +19,7 @@ public class List {
         return item;
     }
 
-    public void addFirstPrompt(AbstractItem item) {
+    public void addFirstByPrompt(AbstractItem item) {
         Node node = new Node(newItem(item));
         if (head == null) {
             head = node;
@@ -29,6 +29,49 @@ public class List {
             head.prev = node;
             head = node;
         }
+        size++;
+    }
+
+    public void addLastByPrompt(AbstractItem item) {
+        Node node = new Node(newItem(item));
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.setPrev(tail);
+            tail.setNext(node);
+            tail = node;
+        }
+        size++;
+    }
+
+    public void addAfterByPrompt(AbstractItem item, int index) {
+        Node node = new Node(newItem(item));
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        node.setNext(current.next);
+        node.setPrev(current);
+        current.next.prev = node;
+        current.next = node;
+        size++;
+    }
+
+    public void addBeforeByPrompt(AbstractItem item, int index) {
+        Node node = new Node(newItem(item));
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        node.setNext(current);
+        node.setPrev(current.prev);
+        current.prev.next = node;
+        current.prev = node;
         size++;
     }
 
