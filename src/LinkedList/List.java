@@ -178,6 +178,26 @@ public class List {
         }
     }
 
+    public AbstractItem searchByString(String search) {
+        Node current = head;
+        while (current != null) {
+            for (int i = 0; i < current.item.getAttributeValue().length; i++) {
+                String current_data = current.item.getAttributeValue()[i];
+                if (current_data.equalsIgnoreCase(search)) {
+                    return current.item;
+                }
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+    public void printFromItem(AbstractItem item) {
+        for (int i = 0; i < item.getAttributeKey().length; i++) {
+            System.out.println(item.getAttributeKey()[i] + ": " + item.getAttributeValue()[i]);
+        }
+    }
+
     public String[] getByIndex(int index) {
         Node current = head;
         int i = 1;

@@ -25,7 +25,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int option = 0;
-        while (option != 8){
+        while (option != 10){
             System.out.println("Welcome to the store!");
             System.out.println("1. View available items");
             System.out.println("2. Add available items");
@@ -35,7 +35,8 @@ public class Main {
             System.out.println("6. Remove cart items");
             System.out.println("7. Checkout");
             System.out.println("8. View sold items");
-            System.out.println("9. Exit");
+            System.out.println("9. Search available items");
+            System.out.println("10. exit");
 
             System.out.println("Please select an option:");
             option = Integer.parseInt(scanner.next());
@@ -485,6 +486,51 @@ public class Main {
                                 System.out.println("Rulers sold:");
                                 rulers_sold.print();
                                 System.out.println("Total rulers sold: " + rulers_sold.getTotalPrice());
+                            }
+                        }
+                    }
+                }
+                case 9 -> {
+                    int option9 = 0;
+                    while (option9 != 4){
+                        System.out.println("1. Books");
+                        System.out.println("2. Pens");
+                        System.out.println("3. Rulers");
+                        System.out.println("4. Exit from this menu");
+                        System.out.println("Please select an option:");
+                        option9 = Integer.parseInt(scanner.next());
+                        switch (option9) {
+                            case 1 -> {
+                                System.out.println("Input book name:");
+                                String book_name = scanner.next();
+                                AbstractItem search_book = available_books.searchByString(book_name);
+                                if (search_book != null){
+                                    System.out.println();
+                                    available_books.printFromItem(search_book);
+                                    System.out.println();
+                                } else {
+                                    System.out.println("Book not found!");
+                                }
+                            }
+                            case 2 -> {
+                                System.out.println("Input pen name:");
+                                String pen_name = scanner.next();
+                                AbstractItem search_pen = available_pens.searchByString(pen_name);
+                                if (search_pen != null){
+                                    available_pens.printFromItem(search_pen);
+                                } else {
+                                    System.out.println("Pen not found!");
+                                }
+                            }
+                            case 3 -> {
+                                System.out.println("Input ruler name:");
+                                String ruler_name = scanner.next();
+                                AbstractItem search_ruler = available_rulers.searchByString(ruler_name);
+                                if (search_ruler != null){
+                                    available_rulers.printFromItem(search_ruler);
+                                } else {
+                                    System.out.println("Ruler not found!");
+                                }
                             }
                         }
                     }
