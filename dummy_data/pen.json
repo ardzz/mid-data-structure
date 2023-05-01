@@ -1,52 +1,52 @@
 [
   {
-    "merk": "Faber-Castell",
-    "ukuran": "lunak",
-    "harga": 3000
+    "brand": "Faber-Castell",
+    "sized": "lunak",
+    "price": 3000
   },
   {
-    "merk": "Staedtler",
-    "ukuran": "sedang",
-    "harga": 2500
+    "brand": "Staedtler",
+    "sized": "sedang",
+    "price": 2500
   },
   {
-    "merk": "Pentel",
-    "ukuran": "tebal",
-    "harga": 3500
+    "brand": "Pentel",
+    "sized": "tebal",
+    "price": 3500
   },
   {
-    "merk": "BIC",
-    "ukuran": "sedang",
-    "harga": 2000
+    "brand": "BIC",
+    "sized": "sedang",
+    "price": 2000
   },
   {
-    "merk": "Zebra",
-    "ukuran": "lunak",
-    "harga": 2800
+    "brand": "Zebra",
+    "sized": "lunak",
+    "price": 2800
   },
   {
-    "merk": "Uni-ball",
-    "ukuran": "sedang",
-    "harga": 3000
+    "brand": "Uni-ball",
+    "sized": "sedang",
+    "price": 3000
   },
   {
-    "merk": "Pilot",
-    "ukuran": "tebal",
-    "harga": 3200
+    "brand": "Pilot",
+    "sized": "tebal",
+    "price": 3200
   },
   {
-    "merk": "Koh-i-Noor",
-    "ukuran": "lunak",
-    "harga": 2700
+    "brand": "Koh-i-Noor",
+    "sized": "lunak",
+    "price": 2700
   },
   {
-    "merk": "Stabilo",
-    "ukuran": "sedang",
-    "harga": 2300
+    "brand": "Stabilo",
+    "sized": "sedang",
+    "price": 2300
   },
   {
-    "merk": "Muji",
-    "ukuran": "lunak",
-    "harga": 2500
+    "brand": "Muji",
+    "sized": "lunak",
+    "price": 2500
   }
 ]
