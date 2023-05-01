@@ -2,7 +2,6 @@ package LinkedList;
 
 import Helper.PromptHandler;
 import Items.AbstractItem;
-import Items.Book;
 
 public class List {
     public Node head;
