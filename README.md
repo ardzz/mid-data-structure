@@ -111,63 +111,10 @@ F --> N[Lihat data terjual]
 F --> O[Cari data tersedia]
 F --> P[Keluar]
 ```
-Menu no 1
-```mermaid
-graph LR
-    A[Lihat data tersedia] --> B[Pilih menu buku, pensil, penghapus] --> C[Tampilkan data tersedia]
-```
 
-Menu no 2
-```mermaid
-graph LR
-    D[Tambah data tersedia] --> E[Pilih menu buku, pensil, penghapus] --> F[Masukkan data]
-```
+#### 3.4 Pengaplikasian kelas abstract pada item (buku, pensil, dan penggaris)
+Kelas abstract adalah kelas yang tidak dapat diinstansiasi dan hanya dapat diwariskan ke anak kelas.
+Penggunaan kelas abstract pada item (buku, pensil, dan penggaris) adalah untuk memudahkan dalam mengelola data penjualan alat tulis. 
+Serta membuat kode lebih bersih, efisien dan efektif.
 
-Menu no 3
-```mermaid
-graph LR
-    G[Hapus data tersedia] --> H[Pilih menu buku, pensil, penghapus] --> I[Masukkan data]
-```
-
-Menu no 4
-```mermaid
-graph LR
-    J[Pindahkan data tersedia ke data keranjang] --> K[Pilih menu buku, pensil, penghapus] --> L[Masukkan data]
-```
-
-Menu no 5
-```mermaid
-graph LR
-    M[Lihat data keranjang] --> N[Pilih menu buku, pensil, penghapus] --> O[Tampilkan data keranjang]
-```
-
-Menu no 6
-```mermaid
-graph LR
-    P[Hapus data keranjang] --> Q[Pilih menu buku, pensil, penghapus] --> R[Masukkan data]
-```
-
-Menu no 7
-```mermaid
-graph LR
-    S[Pindahkan data keranjang ke data terjual] --> T[Pilih menu buku, pensil, penghapus] --> U[Masukkan data]
-```
-
-Menu no 8
-```mermaid
-graph LR
-    V[Lihat data terjual] --> W[Pilih menu buku, pensil, penghapus] --> X[Tampilkan data terjual]
-```
-
-Menu no 9
-```mermaid
-graph LR
-    Y[Cari data tersedia] --> Z[Pilih menu buku, pensil, penghapus] --> A1[Masukkan data]
-```
-
-Menu no 10
-```mermaid
-graph LR
-    A2[Keluar] --> A3[Program selesai]
-```
-
+<img src="assets/diagram_uml_item.png">
