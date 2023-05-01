@@ -19,6 +19,20 @@ public class List {
         return item;
     }
 
+    public void addLast(String[] attribute, AbstractItem item) {
+        item.setAttributeValue(attribute);
+        Node node = new Node(item);
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.setPrev(tail);
+            tail.setNext(node);
+            tail = node;
+        }
+        size++;
+    }
+
     public void addFirstByPrompt(AbstractItem item) {
         Node node = new Node(newItem(item));
         if (head == null) {
@@ -113,9 +127,14 @@ public class List {
 
     public void print() {
         Node current = head;
+        int index = 1;
         while (current != null) {
-            System.out.println(current.item.getAttributeValue()[0]);
+            for (int i = 0; i < current.item.getAttributeKey().length; i++) {
+                System.out.println("[" + index + "] " + current.item.getAttributeKey()[i] + ": " + current.item.getAttributeValue()[i]);
+            }
+            index++;
             current = current.next;
+            System.out.println();
         }
     }
 }
