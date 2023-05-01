@@ -14,7 +14,9 @@
           <root url="jar://$MODULE_DIR$/lib/json-simple-1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/annotations-24.0.0-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
