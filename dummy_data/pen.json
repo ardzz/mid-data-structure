@@ -1,52 +1,52 @@
 [
   {
     "brand": "Faber-Castell",
-    "sized": "lunak",
+    "size": "lunak",
     "price": 3000
   },
   {
     "brand": "Staedtler",
-    "sized": "sedang",
+    "size": "sedang",
     "price": 2500
   },
   {
     "brand": "Pentel",
-    "sized": "tebal",
+    "size": "tebal",
     "price": 3500
   },
   {
     "brand": "BIC",
-    "sized": "sedang",
+    "size": "sedang",
     "price": 2000
   },
   {
     "brand": "Zebra",
-    "sized": "lunak",
+    "size": "lunak",
     "price": 2800
   },
   {
     "brand": "Uni-ball",
-    "sized": "sedang",
+    "size": "sedang",
     "price": 3000
   },
   {
     "brand": "Pilot",
-    "sized": "tebal",
+    "size": "tebal",
     "price": 3200
   },
   {
     "brand": "Koh-i-Noor",
-    "sized": "lunak",
+    "size": "lunak",
     "price": 2700
   },
   {
     "brand": "Stabilo",
-    "sized": "sedang",
+    "size": "sedang",
     "price": 2300
   },
   {
     "brand": "Muji",
-    "sized": "lunak",
+    "size": "lunak",
     "price": 2500
   }
 ]
