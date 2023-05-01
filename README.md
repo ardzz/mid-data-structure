@@ -118,3 +118,262 @@ Penggunaan kelas abstract pada item (buku, pensil, dan penggaris) adalah untuk m
 Serta membuat kode lebih bersih, efisien dan efektif.
 
 <img src="assets/diagram_uml_item.png">
+
+Di dalam kelas abstract terdapat attribute key dan value yang digunakan untuk menyimpan data yang ada di dalam linked list.
+Lalu terdapat method getter dan setter untuk mengambil dan mengubah data yang ada di dalam linked list.
+Key yang dimaksud adalah seperti nama, harga, dan ukuran dari alat tulis.
+Value yang dimaksud adalah nilai dari nama, harga, dan ukuran dari alat tuli (Faber Castell, 5000, 15cm).
+
+Sedangkan di kelas item harus mendeklarasikan attribute key yang ada di dalam kelas abstract.
+Sebagaimana contohnya:
+```java
+package Items;
+
+public class Book extends AbstractItem {
+    String[] attribute = new String[]{
+            "brand", "size", "price"
+    };
+    public Book() {
+        super();
+        super.setAttributeKey(attribute);
+    }
+}
+```
+
+#### 3.5 Double linked list
+Didalam kelas `List` terdapat methods:
+1. addLast(String[] attribute, @NotNull AbstractItem item)
+2. addFirstByPrompt(AbstractItem item)
+3. addLastByPrompt(AbstractItem item)
+4. addAfterByPrompt(AbstractItem item)
+5. addBeforeByPrompt(AbstractItem item)
+6. addAtIndexByPrompt(AbstractItem item, int index)
+7. addAtIndex(AbstractItem item, int index)
+8. deleteByIndex(int index)
+9. deleteAfterByIndex(int index)
+10. deleteBeforeByIndex(int index)
+11. deleteFirst()
+12. deleteLast()
+13. searchByString(String search)
+14. printFromItem(@NotNull AbstractItem item)
+15. getByIndex(int index)
+16. getSize()
+17. getTotalPrice()
+18. newItem(@NotNull AbstractItem item)
+
+Method `addLast(String[] attribute, @NotNull AbstractItem item)` digunakan untuk menambahkan data di akhir linked list.
+```java
+    public void addLast(String[] attribute, @NotNull AbstractItem item) {
+        item.setAttributeValue(attribute);
+        Node node = new Node(item);
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.setPrev(tail);
+            tail.setNext(node);
+            tail = node;
+        }
+        size++;
+    }
+```
+Method addFirstByPrompt(AbstractItem item) digunakan untuk menambahkan data di awal linked list dengan memasukkan data melalui prompt.
+
+```java
+    public void addFirstByPrompt(AbstractItem item) {
+        Node node = new Node(newItem(item));
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.setNext(head);
+            head.prev = node;
+            head = node;
+        }
+        size++;
+    }
+```
+Method addLastByPrompt(AbstractItem item) digunakan untuk menambahkan data di akhir linked list dengan memasukkan data melalui prompt.
+
+```java
+    public void addLastByPrompt(AbstractItem item) {
+        Node node = new Node(newItem(item));
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            node.setPrev(tail);
+            tail.setNext(node);
+            tail = node;
+        }
+        size++;
+    }
+```
+
+Method addAfterByPrompt(AbstractItem item) digunakan untuk menambahkan data setelah data yang dipilih dengan memasukkan data melalui prompt.
+
+```java
+public void addLastByPrompt(AbstractItem item) {
+    Node node = new Node(newItem(item));
+    if (head == null) {
+        head = node;
+        tail = node;
+    } else {
+        node.setPrev(tail);
+        tail.setNext(node);
+        tail = node;
+    }
+    size++;
+}
+```
+
+Method addBeforeByPrompt(AbstractItem item) digunakan untuk menambahkan data sebelum data yang dipilih dengan memasukkan data melalui prompt.
+
+```java
+public void addBeforeByPrompt(AbstractItem item, int index) {
+        Node node = new Node(newItem(item));
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        node.setNext(current);
+        node.setPrev(current.prev);
+        current.prev.next = node;
+        current.prev = node;
+        size++;
+    }
+```
+
+Method addAtIndexByPrompt(AbstractItem item, int index) digunakan untuk menambahkan data pada index yang dipilih dengan memasukkan data melalui prompt.
+
+```java
+public void addAtIndexByPrompt(AbstractItem item, int index) {
+        Node node = new Node(newItem(item));
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        node.setNext(current.next);
+        node.setPrev(current);
+        current.next.prev = node;
+        current.next = node;
+        size++;
+    }
+```
+
+Method deleteByIndex(int index) digunakan untuk menghapus data pada index yang dipilih.
+
+```java
+public void deleteByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        if (current.next == null) {
+            if (current.prev == null) {
+                head = null;
+                tail = null;
+            } else {
+                current.prev.next = null;
+                tail = current.prev;
+            }
+        } else if (current.prev == null) {
+            current.next.prev = null;
+            head = current.next;
+        } else {
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
+        }
+        size--;
+    }
+```
+
+Method deleteAfterByIndex(int index) digunakan untuk menghapus data setelah index yang dipilih.
+
+```java
+public void deleteAfterByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        current.next.next.prev = current;
+        current.next = current.next.next;
+        size--;
+    }
+```
+
+Method deleteBeforeByIndex(int index) digunakan untuk menghapus data sebelum index yang dipilih.
+
+```java
+ public void deleteBeforeByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        current.prev.prev.next = current;
+        current.prev = current.prev.prev;
+        size--;
+    }
+```
+
+Method deleteFirst() digunakan untuk menghapus data pertama.
+
+```java
+    public void deleteFirst() {
+        head = head.next;
+        head.prev = null;
+        size--;
+    }
+```
+
+Method deleteLast() digunakan untuk menghapus data terakhir.
+
+```java
+    public void deleteLast() {
+        tail = tail.prev;
+        tail.next = null;
+        size--;
+    }
+```
+
+#### Method searchByString(String search) digunakan untuk mencari data berdasarkan string yang diinputkan.
+
+```java
+    public AbstractItem searchByString(String search) {
+        Node current = head;
+        while (current != null) {
+            for (int i = 0; i < current.item.getAttributeValue().length; i++) {
+                String current_data = current.item.getAttributeValue()[i];
+                if (current_data.equalsIgnoreCase(search)) {
+                    return current.item;
+                }
+            }
+            current = current.next;
+        }
+        return null;
+    }
+```
+
+#### Method getTotalPrice() digunakan untuk menghitung total harga dari semua item yang ada di linked list.
+
+```java 
+    public int getTotalPrice() {
+        Node current = head;
+        int totalPrice = 0;
+        while (current != null) {
+            totalPrice += Integer.parseInt(current.item.getAttributeValue()[2]);
+            current = current.next;
+        }
+        return totalPrice;
+    }
+```

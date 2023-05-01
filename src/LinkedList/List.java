@@ -2,6 +2,7 @@ package LinkedList;
 
 import Helper.PromptHandler;
 import Items.AbstractItem;
+import org.jetbrains.annotations.NotNull;
 
 public class List {
     public Node head;
@@ -13,13 +14,13 @@ public class List {
         this.size = 0;
     }
 
-    public AbstractItem newItem(AbstractItem item) {
+    public AbstractItem newItem(@NotNull AbstractItem item) {
         PromptHandler prompt = item.PromptInput();
         item.setAttributeValue(prompt.getAttributeValue());
         return item;
     }
 
-    public void addLast(String[] attribute, AbstractItem item) {
+    public void addLast(String[] attribute, @NotNull AbstractItem item) {
         item.setAttributeValue(attribute);
         Node node = new Node(item);
         if (head == null) {
@@ -192,7 +193,7 @@ public class List {
         return null;
     }
 
-    public void printFromItem(AbstractItem item) {
+    public void printFromItem(@NotNull AbstractItem item) {
         for (int i = 0; i < item.getAttributeKey().length; i++) {
             System.out.println(item.getAttributeKey()[i] + ": " + item.getAttributeValue()[i]);
         }
