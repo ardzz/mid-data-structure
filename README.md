@@ -22,6 +22,39 @@ POLITEKNIK NEGERI SEMARANG <br>
 
 <br><br>
 
+### Daftar Isi
+* [BAB 1 PENDAHULUAN](#bab-1-pendahuluan)
+* [1.1 Latar Belakang](#11-latar-belakang)
+* [BAB 2 DASAR TEORI](#bab-2-dasar-teori)
+  * [2.1 Struktur Data](#21-struktur-data)
+  * [2.2 Linked List](#22-linked-list)
+  * [2.3 Double Linked List](#23-double-linked-list)
+  * [BAB 3 METODOLOGI](#bab-3-metodologi)
+    * [3.1 Alat dan Bahan](#31-alat-dan-bahan)
+    * [3.2 Cara Kerja Program](#32-cara-kerja-program)
+    * [3.3 Flowchart](#33-flowchart)
+* [BAB 4 ISI](#bab-4-isi)
+  * [4.1 Pengaplikasian kelas abstract pada item (buku, pensil, dan penggaris)](#41-pengaplikasian-kelas-abstract-pada-item-buku-pensil-dan-penggaris)
+  * [4.5 Double linked list](#45-double-linked-list)
+  * [Method addLast(String[] attribute, @NotNull AbstractItem item) digunakan untuk menambahkan data di akhir linked list.](#method-addlaststring-attribute-notnull-abstractitem-item-digunakan-untuk-menambahkan-data-di-akhir-linked-list)
+  * [Method addFirstByPrompt(AbstractItem item) digunakan untuk menambahkan data di awal linked list dengan memasukkan data melalui prompt.](#method-addfirstbypromptabstractitem-item-digunakan-untuk-menambahkan-data-di-awal-linked-list-dengan-memasukkan-data-melalui-prompt)
+  * [Method addLastByPrompt(AbstractItem item) digunakan untuk menambahkan data di akhir linked list dengan memasukkan data melalui prompt.](#method-addlastbypromptabstractitem-item-digunakan-untuk-menambahkan-data-di-akhir-linked-list-dengan-memasukkan-data-melalui-prompt)
+  * [Method addAfterByPrompt(AbstractItem item) digunakan untuk menambahkan data setelah data yang dipilih dengan memasukkan data melalui prompt.](#method-addafterbypromptabstractitem-item-digunakan-untuk-menambahkan-data-setelah-data-yang-dipilih-dengan-memasukkan-data-melalui-prompt)
+  * [Method addBeforeByPrompt(AbstractItem item) digunakan untuk menambahkan data sebelum data yang dipilih dengan memasukkan data melalui prompt.](#method-addbeforebypromptabstractitem-item-digunakan-untuk-menambahkan-data-sebelum-data-yang-dipilih-dengan-memasukkan-data-melalui-prompt)
+  * [Method addAtIndexByPrompt(AbstractItem item, int index) digunakan untuk menambahkan data pada index yang dipilih dengan memasukkan data melalui prompt.](#method-addatindexbypromptabstractitem-item-int-index-digunakan-untuk-menambahkan-data-pada-index-yang-dipilih-dengan-memasukkan-data-melalui-prompt)
+  * [Method deleteByIndex(int index) digunakan untuk menghapus data pada index yang dipilih.](#method-deletebyindexint-index-digunakan-untuk-menghapus-data-pada-index-yang-dipilih)
+  * [Method deleteAfterByIndex(int index) digunakan untuk menghapus data setelah index yang dipilih.](#method-deleteafterbyindexint-index-digunakan-untuk-menghapus-data-setelah-index-yang-dipilih)
+  * [Method deleteBeforeByIndex(int index) digunakan untuk menghapus data sebelum index yang dipilih.](#method-deletebeforebyindexint-index-digunakan-untuk-menghapus-data-sebelum-index-yang-dipilih)
+  * [Method deleteFirst() digunakan untuk menghapus data pertama.](#method-deletefirst-digunakan-untuk-menghapus-data-pertama)
+  * [Method deleteLast() digunakan untuk menghapus data terakhir.](#method-deletelast-digunakan-untuk-menghapus-data-terakhir)
+  * [Method searchByString(String search) digunakan untuk mencari data berdasarkan string yang diinputkan.](#method-searchbystringstring-search-digunakan-untuk-mencari-data-berdasarkan-string-yang-diinputkan)
+  * [Method getTotalPrice() digunakan untuk menghitung total harga dari semua item yang ada di linked list.](#method-gettotalprice-digunakan-untuk-menghitung-total-harga-dari-semua-item-yang-ada-di-linked-list)
+  * [Sumber kode program](#sumber-kode-program)
+* [BAB 5 Kesimpulan dan Saran](#bab-5-kesimpulan-dan-saran)
+  * [5.1 Kesimpulan](#51-kesimpulan)
+  * [5.2 Saran](#52-saran)
+
+
 ### BAB 1 PENDAHULUAN
 #### 1.1 Latar Belakang
 Laporan ini dibuat untuk memenuhi tugas besar mata kuliah Struktur Data. 
