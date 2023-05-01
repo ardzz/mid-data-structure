@@ -2,6 +2,7 @@ package LinkedList;
 
 import Helper.PromptHandler;
 import Items.AbstractItem;
+import Items.Book;
 
 public class List {
     public Node head;
@@ -89,6 +90,21 @@ public class List {
         size++;
     }
 
+    public void addAtIndexByPrompt(AbstractItem item, int index) {
+        Node node = new Node(newItem(item));
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        node.setNext(current.next);
+        node.setPrev(current);
+        current.next.prev = node;
+        current.next = node;
+        size++;
+    }
+
     public void deleteByIndex(int index) {
         Node current = head;
         int i = 1;
@@ -96,8 +112,21 @@ public class List {
             current = current.next;
             i++;
         }
-        current.prev.next = current.next;
-        current.next.prev = current.prev;
+        if (current.next == null) {
+            if (current.prev == null) {
+                head = null;
+                tail = null;
+            } else {
+                current.prev.next = null;
+                tail = current.prev;
+            }
+        } else if (current.prev == null) {
+            current.next.prev = null;
+            head = current.next;
+        } else {
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
+        }
         size--;
     }
 
@@ -125,6 +154,18 @@ public class List {
         size--;
     }
 
+    public void deleteFirst() {
+        head = head.next;
+        head.prev = null;
+        size--;
+    }
+
+    public void deleteLast() {
+        tail = tail.prev;
+        tail.next = null;
+        size--;
+    }
+
     public void print() {
         Node current = head;
         int index = 1;
@@ -136,5 +177,29 @@ public class List {
             current = current.next;
             System.out.println();
         }
+    }
+
+    public String[] getByIndex(int index) {
+        Node current = head;
+        int i = 1;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        return current.item.getAttributeValue();
+    }
+
+    public int getTotalPrice() {
+        Node current = head;
+        int totalPrice = 0;
+        while (current != null) {
+            totalPrice += Integer.parseInt(current.item.getAttributeValue()[2]);
+            current = current.next;
+        }
+        return totalPrice;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
