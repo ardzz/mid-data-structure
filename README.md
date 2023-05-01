@@ -24,7 +24,7 @@ POLITEKNIK NEGERI SEMARANG <br>
 
 ### Daftar Isi
 * [BAB 1 PENDAHULUAN](#bab-1-pendahuluan)
-* [1.1 Latar Belakang](#11-latar-belakang)
+  * [1.1 Latar Belakang](#11-latar-belakang)
 * [BAB 2 DASAR TEORI](#bab-2-dasar-teori)
   * [2.1 Struktur Data](#21-struktur-data)
   * [2.2 Linked List](#22-linked-list)
