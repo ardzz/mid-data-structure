@@ -70,3 +70,104 @@ Double linked list memiliki pointer yang menunjuk ke node sebelumnya dan node se
 4. Java
 
 #### 3.2 Cara Kerja Program
+Program terdiri dari 9 linked list yaitu:
+1. linked list untuk data tersedia (3)
+2. linked list untuk data keranjang (3)
+3. linked list untuk data terjual (3)
+
+Tujuan dibuatnya 9 linked list adalah untuk memudahkan dalam mengelola data penjualan alat tulis. 
+Seperti berinteraksi dengan data keranjang layaknya keranjang belanja di supermarket, yang bisa memindahkan data dari data tersedia ke data keranjang, menghapus data yang ada di dalam data keranjang, dan menampilkan data yang ada di dalam data keranjang.
+
+Lalu ada data terjual yang berfungsi untuk menyimpan data yang sudah di _checkout_ atau sudah dibeli oleh pembeli.
+
+Program ini memiliki 10 menu, yaitu:
+1. Lihat data tersedia
+2. Tambah data tersedia
+3. Hapus data tersedia
+4. Pindahkan data tersedia ke data keranjang
+5. Lihat data keranjang
+6. Hapus data keranjang
+7. Pindahkan data keranjang ke data terjual (_checkout_)
+8. Lihat data terjual
+9. Cari data tersedia
+10. Keluar
+
+#### 3.3 Flowchart
+```mermaid
+graph LR
+A[Memulai Program] --> B[Memasukkan data tersedia]
+B --> C[Memasukkan data keranjang]
+C --> D[Memasukkan data terjual]
+D --> E[Memilih menu]
+E --> F{Menu yang dipilih}
+F --> G[Lihat data tersedia]
+F --> H[Tambah data tersedia]
+F --> I[Hapus data tersedia]
+F --> J[Pindahkan data tersedia ke data keranjang]
+F --> K[Lihat data keranjang]
+F --> L[Hapus data keranjang]
+F --> M[Pindahkan data keranjang ke data terjual]
+F --> N[Lihat data terjual]
+F --> O[Cari data tersedia]
+F --> P[Keluar]
+```
+Menu no 1
+```mermaid
+graph LR
+    A[Lihat data tersedia] --> B[Pilih menu buku, pensil, penghapus] --> C[Tampilkan data tersedia]
+```
+
+Menu no 2
+```mermaid
+graph LR
+    D[Tambah data tersedia] --> E[Pilih menu buku, pensil, penghapus] --> F[Masukkan data]
+```
+
+Menu no 3
+```mermaid
+graph LR
+    G[Hapus data tersedia] --> H[Pilih menu buku, pensil, penghapus] --> I[Masukkan data]
+```
+
+Menu no 4
+```mermaid
+graph LR
+    J[Pindahkan data tersedia ke data keranjang] --> K[Pilih menu buku, pensil, penghapus] --> L[Masukkan data]
+```
+
+Menu no 5
+```mermaid
+graph LR
+    M[Lihat data keranjang] --> N[Pilih menu buku, pensil, penghapus] --> O[Tampilkan data keranjang]
+```
+
+Menu no 6
+```mermaid
+graph LR
+    P[Hapus data keranjang] --> Q[Pilih menu buku, pensil, penghapus] --> R[Masukkan data]
+```
+
+Menu no 7
+```mermaid
+graph LR
+    S[Pindahkan data keranjang ke data terjual] --> T[Pilih menu buku, pensil, penghapus] --> U[Masukkan data]
+```
+
+Menu no 8
+```mermaid
+graph LR
+    V[Lihat data terjual] --> W[Pilih menu buku, pensil, penghapus] --> X[Tampilkan data terjual]
+```
+
+Menu no 9
+```mermaid
+graph LR
+    Y[Cari data tersedia] --> Z[Pilih menu buku, pensil, penghapus] --> A1[Masukkan data]
+```
+
+Menu no 10
+```mermaid
+graph LR
+    A2[Keluar] --> A3[Program selesai]
+```
+
