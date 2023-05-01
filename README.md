@@ -111,8 +111,8 @@ F --> N[Lihat data terjual]
 F --> O[Cari data tersedia]
 F --> P[Keluar]
 ```
-
-#### 3.4 Pengaplikasian kelas abstract pada item (buku, pensil, dan penggaris)
+### BAB 4 ISI
+#### 4.1 Pengaplikasian kelas abstract pada item (buku, pensil, dan penggaris)
 Kelas abstract adalah kelas yang tidak dapat diinstansiasi dan hanya dapat diwariskan ke anak kelas.
 Penggunaan kelas abstract pada item (buku, pensil, dan penggaris) adalah untuk memudahkan dalam mengelola data penjualan alat tulis. 
 Serta membuat kode lebih bersih, efisien dan efektif.
@@ -140,7 +140,7 @@ public class Book extends AbstractItem {
 }
 ```
 
-#### 3.5 Double linked list
+#### 4.5 Double linked list
 Didalam kelas `List` terdapat methods:
 1. addLast(String[] attribute, @NotNull AbstractItem item)
 2. addFirstByPrompt(AbstractItem item)
@@ -161,7 +161,7 @@ Didalam kelas `List` terdapat methods:
 17. getTotalPrice()
 18. newItem(@NotNull AbstractItem item)
 
-Method `addLast(String[] attribute, @NotNull AbstractItem item)` digunakan untuk menambahkan data di akhir linked list.
+#### Method `addLast(String[] attribute, @NotNull AbstractItem item)` digunakan untuk menambahkan data di akhir linked list.
 ```java
     public void addLast(String[] attribute, @NotNull AbstractItem item) {
         item.setAttributeValue(attribute);
@@ -177,7 +177,7 @@ Method `addLast(String[] attribute, @NotNull AbstractItem item)` digunakan untuk
         size++;
     }
 ```
-Method addFirstByPrompt(AbstractItem item) digunakan untuk menambahkan data di awal linked list dengan memasukkan data melalui prompt.
+#### Method addFirstByPrompt(AbstractItem item) digunakan untuk menambahkan data di awal linked list dengan memasukkan data melalui prompt.
 
 ```java
     public void addFirstByPrompt(AbstractItem item) {
@@ -193,7 +193,7 @@ Method addFirstByPrompt(AbstractItem item) digunakan untuk menambahkan data di a
         size++;
     }
 ```
-Method addLastByPrompt(AbstractItem item) digunakan untuk menambahkan data di akhir linked list dengan memasukkan data melalui prompt.
+#### Method addLastByPrompt(AbstractItem item) digunakan untuk menambahkan data di akhir linked list dengan memasukkan data melalui prompt.
 
 ```java
     public void addLastByPrompt(AbstractItem item) {
@@ -210,7 +210,7 @@ Method addLastByPrompt(AbstractItem item) digunakan untuk menambahkan data di ak
     }
 ```
 
-Method addAfterByPrompt(AbstractItem item) digunakan untuk menambahkan data setelah data yang dipilih dengan memasukkan data melalui prompt.
+#### Method addAfterByPrompt(AbstractItem item) digunakan untuk menambahkan data setelah data yang dipilih dengan memasukkan data melalui prompt.
 
 ```java
 public void addLastByPrompt(AbstractItem item) {
@@ -227,7 +227,7 @@ public void addLastByPrompt(AbstractItem item) {
 }
 ```
 
-Method addBeforeByPrompt(AbstractItem item) digunakan untuk menambahkan data sebelum data yang dipilih dengan memasukkan data melalui prompt.
+#### Method addBeforeByPrompt(AbstractItem item) digunakan untuk menambahkan data sebelum data yang dipilih dengan memasukkan data melalui prompt.
 
 ```java
 public void addBeforeByPrompt(AbstractItem item, int index) {
@@ -246,7 +246,7 @@ public void addBeforeByPrompt(AbstractItem item, int index) {
     }
 ```
 
-Method addAtIndexByPrompt(AbstractItem item, int index) digunakan untuk menambahkan data pada index yang dipilih dengan memasukkan data melalui prompt.
+#### Method addAtIndexByPrompt(AbstractItem item, int index) digunakan untuk menambahkan data pada index yang dipilih dengan memasukkan data melalui prompt.
 
 ```java
 public void addAtIndexByPrompt(AbstractItem item, int index) {
@@ -265,7 +265,7 @@ public void addAtIndexByPrompt(AbstractItem item, int index) {
     }
 ```
 
-Method deleteByIndex(int index) digunakan untuk menghapus data pada index yang dipilih.
+#### Method deleteByIndex(int index) digunakan untuk menghapus data pada index yang dipilih.
 
 ```java
 public void deleteByIndex(int index) {
@@ -294,7 +294,7 @@ public void deleteByIndex(int index) {
     }
 ```
 
-Method deleteAfterByIndex(int index) digunakan untuk menghapus data setelah index yang dipilih.
+#### Method deleteAfterByIndex(int index) digunakan untuk menghapus data setelah index yang dipilih.
 
 ```java
 public void deleteAfterByIndex(int index) {
@@ -310,7 +310,7 @@ public void deleteAfterByIndex(int index) {
     }
 ```
 
-Method deleteBeforeByIndex(int index) digunakan untuk menghapus data sebelum index yang dipilih.
+#### Method deleteBeforeByIndex(int index) digunakan untuk menghapus data sebelum index yang dipilih.
 
 ```java
  public void deleteBeforeByIndex(int index) {
@@ -326,7 +326,7 @@ Method deleteBeforeByIndex(int index) digunakan untuk menghapus data sebelum ind
     }
 ```
 
-Method deleteFirst() digunakan untuk menghapus data pertama.
+#### Method deleteFirst() digunakan untuk menghapus data pertama.
 
 ```java
     public void deleteFirst() {
@@ -336,7 +336,7 @@ Method deleteFirst() digunakan untuk menghapus data pertama.
     }
 ```
 
-Method deleteLast() digunakan untuk menghapus data terakhir.
+#### Method deleteLast() digunakan untuk menghapus data terakhir.
 
 ```java
     public void deleteLast() {
@@ -377,3 +377,24 @@ Method deleteLast() digunakan untuk menghapus data terakhir.
         return totalPrice;
     }
 ```
+
+### Sumber kode program
+Sumber kode program dapat diakses pada tautan https://github.com/ardzz/mid-data-structure
+
+### BAB 5 Kesimpulan dan Saran
+#### 5.1 Kesimpulan
+Dari hasil pembuatan program ini, dapat disimpulkan bahwa:
+1. Linked list merupakan salah satu struktur data yang dapat digunakan untuk menyimpan data dengan cara menghubungkan setiap data dengan pointer.
+2. Linked list memiliki kelebihan dan kekurangan. Kelebihan dari linked list adalah dapat menambahkan data dengan mudah, sedangkan kekurangan dari linked list adalah tidak dapat mengakses data secara langsung.
+3. Linked list memiliki beberapa jenis, yaitu singly linked list, doubly linked list, dan circular linked list.
+4. Linked list dapat digunakan untuk menyimpan data dengan jumlah yang tidak diketahui.
+5. Linked list dapat digunakan untuk menyimpan data dengan tipe yang berbeda-beda.
+6. Linked list dapat digunakan untuk menyimpan data dengan jumlah yang tidak diketahui.
+
+#### 5.2 Saran
+Dari hasil pembuatan program ini, penulis memberikan beberapa saran, yaitu:
+1. Diharapkan agar pembaca dapat memahami cara kerja dari linked list.
+2. Diharapkan agar pembaca dapat memahami kelebihan dan kekurangan dari linked list.
+3. Diharapkan agar pembaca dapat memahami jenis-jenis dari linked list.
+4. Diharapkan agar pembaca dapat memahami cara mengimplementasikan linked list.
+5. Diharapkan agar pembaca dapat memahami kegunaan dari linked list.
