@@ -59,7 +59,6 @@ public class List {
         }
         size++;
     }
-
     public void addAfterByPrompt(AbstractItem item, int index) {
         Node node = new Node(newItem(item));
         Node current = head;
@@ -68,11 +67,16 @@ public class List {
             current = current.next;
             i++;
         }
-        node.setNext(current.next);
-        node.setPrev(current);
-        current.next.prev = node;
-        current.next = node;
-        size++;
+        try{
+            node.setNext(current.next);
+            node.setPrev(current);
+            current.next.prev = node;
+            current.next = node;
+            size++;
+        } catch (NullPointerException e) {
+            System.out.println("[-] Error while adding after index " + index);
+            System.out.println("[-] Error message : " + e.getMessage());
+        }
     }
 
     public void addBeforeByPrompt(AbstractItem item, int index) {
@@ -83,11 +87,16 @@ public class List {
             current = current.next;
             i++;
         }
-        node.setNext(current);
-        node.setPrev(current.prev);
-        current.prev.next = node;
-        current.prev = node;
-        size++;
+        try {
+            node.setNext(current);
+            node.setPrev(current.prev);
+            current.prev.next = node;
+            current.prev = node;
+            size++;
+        } catch (NullPointerException e) {
+            System.out.println("[-] Error while adding after index " + index);
+            System.out.println("[-] Error message : " + e.getMessage());
+        }
     }
 
     public void addAtIndexByPrompt(AbstractItem item, int index) {
@@ -98,11 +107,17 @@ public class List {
             current = current.next;
             i++;
         }
-        node.setNext(current.next);
-        node.setPrev(current);
-        current.next.prev = node;
-        current.next = node;
-        size++;
+        try {
+            node.setNext(current.next);
+            node.setPrev(current);
+            current.next.prev = node;
+            current.next = node;
+            size++;
+        }
+        catch (NullPointerException e) {
+            System.out.println("[-] Error while adding after index " + index);
+            System.out.println("[-] Error message : " + e.getMessage());
+        }
     }
 
     public void deleteByIndex(int index) {
@@ -137,9 +152,14 @@ public class List {
             current = current.next;
             i++;
         }
-        current.next.next.prev = current;
-        current.next = current.next.next;
-        size--;
+        try {
+            current.next.next.prev = current;
+            current.next = current.next.next;
+            size--;
+        } catch (NullPointerException e) {
+            System.out.println("[-] Error while deleting after index " + index);
+            System.out.println("[-] Error message : " + e.getMessage());
+        }
     }
 
     public void deleteBeforeByIndex(int index) {
@@ -149,21 +169,36 @@ public class List {
             current = current.next;
             i++;
         }
-        current.prev.prev.next = current;
-        current.prev = current.prev.prev;
-        size--;
+        try {
+            current.prev.prev.next = current;
+            current.prev = current.prev.prev;
+            size--;
+        } catch (NullPointerException e) {
+            System.out.println("[-] Error while deleting before index " + index);
+            System.out.println("[-] Error message : " + e.getMessage());
+        }
     }
 
     public void deleteFirst() {
-        head = head.next;
-        head.prev = null;
-        size--;
+        if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
     }
 
     public void deleteLast() {
-        tail = tail.prev;
-        tail.next = null;
-        size--;
+        if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            size--;
+        }
     }
 
     public void print() {
